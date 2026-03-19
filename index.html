@@ -430,7 +430,7 @@ body::before {
       </div>
     </div>
     <div class="modal-section" id="ms-evento">
-      <div class="field"><label>¿Qué tienes?</label><input type="text" id="ev-title" placeholder="Ej: Revisión La Pata Negra" /></div>
+      <div class="field"><label>¿Qué tienes?</label><input type="text" id="ev-title" placeholder="Ej: Revisión La Pelirroja" /></div>
       <div class="field"><label>Fecha</label><input type="date" id="ev-date" /></div>
       <div class="field"><label>Hora (opcional)</label><input type="time" id="ev-time" /></div>
       <div class="modal-actions">
@@ -524,14 +524,16 @@ const QUOTES_JAVI=[
   'Un legionario no elige las batallas. Elige cómo las pelea.',
   'La tierra da lo que se le pide, si se le pide bien y a tiempo.',
   'Dios está con quienes perseveran (Corán 2:153). Y tú llevas años demostrándolo.',
-  'La Pata Negra no es una moto. Es una forma de entender la vida.',
+  'La Pelirroja no es una moto. Es una forma de entender la libertad.',
   'El que forja sabe que nada sale bien sin fuego y sin paciencia.',
   'Tras cada dificultad viene la facilidad (Corán 94:5-6). El campo también lo sabe.',
   'Un hombre de campo sabe esperar. Eso vale más que cualquier fuerza.',
   'Lo que se construye con las manos dura más que lo que se firma.',
   'La legión enseña una sola cosa por encima de todo: seguir. Siempre seguir.',
-  'Una moto en marcha y un campo que atender. Hay quien paga por menos.',
-  'El acero se forja en frío, se trabaja en caliente. Los hombres, al revés.'
+  'Una CBR 600 roja y un campo que atender. Hay quien paga por vivir así.',
+  'El acero se forja en frío, se trabaja en caliente. Los hombres, al revés.',
+  'La Pelirroja ya tiene kilómetros encima. Igual que tú. Y los dos seguís.',
+  'Un guerrero musulmán, un herrero, un granjero y un motero. Todo el mismo hombre.'
 ];
 
 const NOTES_QUOTES_JAVI=[
@@ -545,7 +547,7 @@ const JAVI_COMMENTS={
   task_done:[
     'Tachado. Siguiente.',
     'Hecho. Como en la legión, sin excusas.',
-    'Completado. La Pata Negra no espera a los lentos.',
+    'Completado. La Pelirroja no espera a los lentos.',
     'Uno menos. El campo no da medallas pero tú sí te las ganas.',
     'Listo. Sin dramas, sin historias.',
     'Hecho. Si forjar hierro fuera así de fácil, cualquiera lo haría.',
@@ -556,7 +558,7 @@ const JAVI_COMMENTS={
   ],
   morning:[
     'Buenos días. Los animales llevan media hora mirando el comedero.',
-    'Otro día. La Pata Negra está en el garaje lista. Tú también.',
+    'Otro día. La Pelirroja está en el garaje lista. Tú también.',
     'Buenos días. La granja no se cuida sola, pero tú tampoco necesitas que te lo recuerden.',
     'Buenos días. El hierro se forja en caliente. Igual que el día.',
     'Otro amanecer en el campo. Pocos tienen esa suerte y pocos se la merecen como tú.',
@@ -565,13 +567,13 @@ const JAVI_COMMENTS={
   ],
   overload:[
     'Eso es mucho para un día. El legionario que sobrecarga la mochila llega el último.',
-    'Demasiado. Hasta La Pata Negra necesita parar a repostar.',
+    'Demasiado. Hasta La Pelirroja necesita parar a repostar.',
     'Filtra. No todo es urgente aunque todo lo parezca.',
     'Uno a uno. Siempre. Hasta en la legión se avanza así.',
     'Con esa lista, hasta el hierro se doblaría. Prioriza, Javi.'
   ],
   free_tomorrow:[
-    'Mañana libre. Buen día para sacar La Pata Negra sin destino fijo.',
+    'Mañana libre. Buen día para sacar La Pelirroja sin destino fijo.',
     'Sin planes mañana. El campo también descansa. Tú también puedes.',
     'Mañana despejado. Pon la moto, pon el viento, quita el reloj.',
     'Libre mañana. Raro pero real. No lo llenes antes de que llegue.'
@@ -581,7 +583,7 @@ const JAVI_COMMENTS={
     'El día cerrado. Mañana más. Así funciona esto.',
     'Descansa, Javi. Los animales ya duermen. Ahora tú.',
     'Buenas noches. Dios está con quienes duermen con la conciencia limpia.',
-    'La Pata Negra ya está en el garaje. Tú al catre.'
+    'La Pelirroja ya está en el garaje. Tú al catre.'
   ],
   rescue:[
     'Aplazado. En la legión se llama retirada táctica. No es rendirse.',
@@ -593,7 +595,7 @@ const JAVI_COMMENTS={
     'Lista limpia. Misión cumplida. Eso es todo, legionario.',
     'Todo hecho. La granja puede respirar. Tú también.',
     'Completado. Si forjar fuera así de rápido, serías rico.',
-    'Todo tachado. La Pata Negra estaría orgullosa si pudiera estarlo.',
+    'Todo tachado. La Pelirroja estaría orgullosa si pudiera estarlo.',
     'Hecho todo. Así se lleva una granja, una moto y una familia. Con cabeza.'
   ]
 };
@@ -627,9 +629,9 @@ function showToast(msg,duration=14000){
 // ─── STREAK ──────────────────────────────────────────────
 const STREAK_MSGS={
   low:['Día {n}. De vuelta. Peor es no volver.','Racha de {n}. Empezar de cero es de los que siguen. Bien.','Llevas {n} día. La legión empezó igual, un día.'],
-  mid:['{n} días seguidos. Eso ya huele a costumbre.','Casi una semana. La Pata Negra lleva más kilómetros con menos ruido.','{n} días. El campo no lo sabe, pero los animales sí lo notan.'],
+  mid:['{n} días seguidos. Eso ya huele a costumbre.','Casi una semana. La Pelirroja lleva más kilómetros con menos ruido.','{n} días. El campo no lo sabe, pero los animales sí lo notan.'],
   high:['{n} días. Eso ya no es suerte. Eso es carácter.','¡{n} días, Javi! Si el acero aguantara tanto, viviría para siempre.','{n} días seguidos. En la legión eso ya es mérito de mención.'],
-  epic:['{n} días. Ya es parte de ti aunque no lo parezca.','{n} días. La Pata Negra no lleva tantos sin parar. Impresionante.','Más de un mes. Dios está con quienes perseveran. Y tú llevas {n} días demostrándolo.']
+  epic:['{n} días. Ya es parte de ti aunque no lo parezca.','{n} días. La Pelirroja no lleva tantos sin parar. Impresionante.','Más de un mes. Dios está con quienes perseveran. Y tú llevas {n} días demostrándolo.']
 };
 function showStreakToast(n){
   let pool=n<=3?STREAK_MSGS.low:n<=9?STREAK_MSGS.mid:n<=29?STREAK_MSGS.high:STREAK_MSGS.epic;

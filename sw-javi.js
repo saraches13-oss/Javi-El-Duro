@@ -2,7 +2,7 @@ const MSGS = [
   'Buenos días. La granja no espera.',
   'Javi. 7 de la mañana. A por ello.',
   'Buenos días. Los animales ya están despiertos.',
-  'Nuevo día. La Pata Negra está en el garaje esperando.',
+  'Nuevo día. La Pelirroja está en el garaje esperando.',
   'Buenos días. Dios da el día, tú pones el trabajo.',
   'Arriba. El campo no se cuida solo.',
   'Buenos días, legionario. Misión del día por definir.',
