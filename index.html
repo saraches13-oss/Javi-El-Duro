@@ -301,6 +301,15 @@ body::before {
       <div id="hadith-source" style="font-size:15px;color:var(--text-muted);margin-top:10px;"></div>
     </div>
 
+    <div style="height:1px;background:linear-gradient(to right, transparent, rgba(30,122,80,0.2), transparent);margin:1.25rem 0;"></div>
+
+    <!-- SUNNA DEL DÍA -->
+    <div class="info-card" style="margin-bottom:14px;">
+      <div style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">🌙 Sunna del día</div>
+      <div id="sunna-content" style="font-size:18px;color:var(--text-soft);line-height:1.75;"><span style="color:var(--text-muted);font-style:italic;">Cargando...</span></div>
+      <div id="sunna-source" style="font-size:15px;color:var(--text-muted);margin-top:10px;"></div>
+    </div>
+
     <div style="height:1px;background:linear-gradient(to right, transparent, rgba(30,122,80,0.2), transparent);margin-bottom:1.25rem;"></div>
 
     <!-- FILA 3: frase del día + notas rápidas -->
@@ -727,6 +736,78 @@ function fetchQuote(){
 }
 
 // ─── INIT ─────────────────────────────────────────────────
+async function fetchSunna(){
+  const dayKey='javi_sunna_day';
+  const textKey='javi_sunna_text';
+  const srcKey='javi_sunna_src';
+  const todayStr=toDateStr(now);
+  if(localStorage.getItem(dayKey)===todayStr&&localStorage.getItem(textKey)){
+    document.getElementById('sunna-content').textContent=localStorage.getItem(textKey);
+    document.getElementById('sunna-source').textContent=localStorage.getItem(srcKey)||'';
+    return;
+  }
+  const sunnas=[
+    {t:'Comenzar cualquier acción importante diciendo Bismillah — En el nombre de Dios.',s:'Práctica constante del Profeta paz sea con él'},
+    {t:'Saludar con As-salamu alaykum al entrar en casa, aunque no haya nadie.',s:'Abu Dawud'},
+    {t:'Comer con la mano derecha y empezar con lo que está más cerca.',s:'Al-Bujari y Muslim'},
+    {t:'Visitar a los enfermos, aunque sea una visita breve.',s:'Al-Bujari'},
+    {t:'Responder al estornudo de otro con Yarhamukallah.',s:'Al-Bujari'},
+    {t:'Entrar al baño con el pie izquierdo y salir con el derecho.',s:'Ibn Majah'},
+    {t:'Dormir sobre el lado derecho y recitar la dua antes de dormir.',s:'Al-Bujari'},
+    {t:'Usar el siwak — cepillo de dientes natural — para la limpieza bucal.',s:'Al-Bujari y Muslim'},
+    {t:'Dar de comer primero al invitado antes de comer uno mismo.',s:'Práctica del Profeta paz sea con él'},
+    {t:'No hablar mal de la comida. Si no te gusta, simplemente no la comas.',s:'Al-Bujari y Muslim'},
+    {t:'Consultar a los demás antes de tomar decisiones importantes — la shura.',s:'Corán 3:159 y Sunna'},
+    {t:'Visitar el cementerio para recordar la muerte y rezar por los fallecidos.',s:'Muslim'},
+    {t:'Ponerse ropa nueva haciendo dua de agradecimiento.',s:'Abu Dawud y Tirmidhi'},
+    {t:'Mantener los lazos familiares — silat al-rahim — aunque sea con una llamada.',s:'Al-Bujari y Muslim'},
+    {t:'Rezar dos rakats de saludo a la mezquita al entrar en ella.',s:'Al-Bujari y Muslim'},
+    {t:'Dar la mano con las dos manos como señal de respeto y afecto.',s:'Práctica del Profeta paz sea con él'},
+    {t:'Empezar el día con el Fajr y no volver a dormir después para aprovechar las bendiciones de la mañana.',s:'Abu Dawud'},
+    {t:'Recitar Ayat al-Kursi antes de dormir para protección.',s:'Al-Bujari'},
+    {t:'Hacer el wudu — ablución — con cuidado y no desperdiciando agua.',s:'Ibn Majah'},
+    {t:'Caminar con humildad, sin arrogancia ni paso altivo.',s:'Corán 17:37 y Sunna'},
+    {t:'Decir Al-hamdulillah al terminar de comer y beber.',s:'Abu Dawud y Tirmidhi'},
+    {t:'Dar limosna en secreto vale más que darla en público.',s:'Al-Bujari y Muslim'},
+    {t:'Respetar a los mayores y ser compasivo con los pequeños.',s:'Abu Dawud y Tirmidhi'},
+    {t:'No interrumpir a quien habla hasta que termine.',s:'Práctica y enseñanza del Profeta paz sea con él'},
+    {t:'Hacer dua por los ausentes — esa dua es respondida antes que las demás.',s:'Muslim'},
+    {t:'Leer el Corán con regularidad aunque sea poco, para no olvidarlo.',s:'Al-Bujari y Muslim'},
+    {t:'Agradecer cada bendición pequeña, pues el agradecimiento atrae más bendiciones.',s:'Corán 14:7 y Sunna'},
+    {t:'Mantener la lengua limpia — el que calla se salva.',s:'Tirmidhi'},
+    {t:'Sonreír al hermano ya es una forma de sadaqa — limosna.',s:'Tirmidhi'},
+    {t:'Ayudar al que carga un peso, aunque no te lo pida.',s:'Práctica del Profeta paz sea con él'}
+  ];
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:200,
+        messages:[{role:'user',content:'Dame UNA enseñanza práctica de la Sunna del Profeta Muhammad paz sea con él, en español, breve y concreta — algo que se pueda aplicar en el día a día. Formato: primero la enseñanza, luego la fuente en la siguiente línea. Sin introducción, sin explicación extra.'}]
+      })
+    });
+    const data=await res.json();
+    const lines=data.content[0].text.trim().split('\n').filter(l=>l.trim());
+    const text=lines[0].trim();
+    const src=lines[1]?lines[1].trim():'';
+    if(text.length>10){
+      localStorage.setItem(dayKey,todayStr);localStorage.setItem(textKey,text);localStorage.setItem(srcKey,src);
+      document.getElementById('sunna-content').textContent=text;
+      document.getElementById('sunna-source').textContent=src;
+      return;
+    }
+    throw new Error();
+  }catch(e){
+    const dayOfYear=Math.floor((now-new Date(now.getFullYear(),0,0))/(1000*60*60*24));
+    const s=sunnas[(dayOfYear+1)%sunnas.length];
+    localStorage.setItem(dayKey,todayStr);localStorage.setItem(textKey,s.t);localStorage.setItem(srcKey,'— '+s.s);
+    document.getElementById('sunna-content').textContent=s.t;
+    document.getElementById('sunna-source').textContent='— '+s.s;
+  }
+}
+
 async function fetchHadith(){
   const dayKey='javi_hadith_day';
   const textKey='javi_hadith_text';
@@ -781,7 +862,7 @@ async function fetchHadith(){
       body:JSON.stringify({
         model:'claude-sonnet-4-20250514',
         max_tokens:200,
-        messages:[{role:'user',content:'Dame UN hadiz auténtico y conocido del Profeta Muhammad ﷺ, en español, que no sea demasiado largo. Formato exacto: primero el texto del hadiz, luego en la siguiente línea la fuente entre paréntesis (colección y número si lo sabes). Sin explicaciones, sin introducción, solo el hadiz y la fuente.'}]
+        messages:[{role:'user',content:'Dame UN hadiz auténtico y conocido del Profeta Muhammad paz sea con él, en español, que no sea demasiado largo. Formato exacto: primero el texto del hadiz, luego en la siguiente línea la fuente entre paréntesis (colección y número si lo sabes). Sin explicaciones, sin introducción, solo el hadiz y la fuente.'}]
       })
     });
     const data=await res.json();
@@ -822,7 +903,7 @@ function init(){
   document.getElementById('ev-date').value=toDateStr(now);
   document.getElementById('notes-area').value='';
   renderToday();renderTomorrow();renderCal();renderRecurring();renderNotesHeader();
-  fetchWeather();fetchPrayerTimes();fetchQuote();fetchHadith();updateStreak();
+  fetchWeather();fetchPrayerTimes();fetchQuote();fetchHadith();fetchSunna();updateStreak();
   const triggerGreet=h<13?'morning':h>=21?'night':null;
   if(triggerGreet) setTimeout(()=>showToast(getJaviComment(triggerGreet)),2000);
 }
