@@ -44,7 +44,7 @@
   --dhikr-glow: rgba(42,138,96,0.18);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { min-height: 100%; background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--text); }
+html, body { min-height: 100%; background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--text); font-size: 18px; }
 
 /* Fondo sutil con textura de forja */
 body::before {
@@ -62,8 +62,8 @@ body::before {
 
 /* HEADER */
 .top { padding: 2rem 2rem 1.5rem; border-bottom: 1px solid rgba(148,200,170,0.2); }
-.date-small { font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
-.greeting { font-family: 'DM Serif Display', serif; font-size: 28px; line-height: 1.2; color: var(--text); }
+.date-small { font-size: 14px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.greeting { font-family: 'DM Serif Display', serif; font-size: 32px; line-height: 1.2; color: var(--text); }
 .greeting em { font-style: italic; color: var(--gold); }
 
 /* SECTIONS */
@@ -85,8 +85,8 @@ body::before {
 
 .col-head { padding: 12px 14px 10px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
 .col-icon { font-size: 16px; line-height: 1; }
-.col-title { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-soft); flex: 1; }
-.col-count { font-size: 11px; color: var(--text-muted); }
+.col-title { font-size: 13px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-soft); flex: 1; }
+.col-count { font-size: 13px; color: var(--text-muted); }
 .col-body { padding: 10px 12px 20px; display: flex; flex-direction: column; gap: 7px; }
 
 /* TASK ITEMS */
@@ -104,14 +104,14 @@ body::before {
 .check.done::after { content:''; display:block; width:4px; height:7px; border:1.5px solid #111; border-top:none; border-left:none; transform:rotate(45deg) translateY(-1px); }
 
 .task-info { flex:1; min-width:0; }
-.task-text { font-size: 15px; color: var(--text); line-height: 1.4; word-break: break-word; }
+.task-text { font-size: 18px; color: var(--text); line-height: 1.4; word-break: break-word; }
 .done-item .task-text { text-decoration: line-through; }
 .task-meta { display:flex; gap:5px; margin-top:3px; }
-.task-time { font-size: 10px; color: var(--text-muted); }
+.task-time { font-size: 13px; color: var(--text-muted); }
 .rec-badge { font-size: 10px; color: var(--text-muted); }
 .del-btn { background:none; border:none; color:var(--text-muted); font-size:14px; cursor:pointer; opacity:0; padding:0; flex-shrink:0; margin-top:1px; transition:opacity 0.15s; }
 .task-item:hover .del-btn { opacity:1; }
-.col-empty { font-size:12px; color:var(--text-muted); font-style:italic; padding:4px 2px; }
+.col-empty { font-size:15px; color:var(--text-muted); font-style:italic; padding:4px 2px; }
 
 /* BOTTOM SECTION */
 .bottom-section { margin-top:1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:start; }
@@ -120,10 +120,10 @@ body::before {
 @media(max-width:440px){ .three-col-info { grid-template-columns:1fr !important; } }
 
 .info-card { background:var(--surface); border-radius:16px; border:1px solid var(--border); padding:18px 20px; box-shadow:0 4px 16px rgba(30,122,80,0.08); }
-.info-title { font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:14px; }
+.info-title { font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:14px; }
 
 /* TOMORROW */
-.tmr-item { display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-bottom:1px solid var(--border); font-size:15px; color:var(--text-soft); line-height:1.4; }
+.tmr-item { display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-bottom:1px solid var(--border); font-size:17px; color:var(--text-soft); line-height:1.4; }
 .tmr-item:last-child { border-bottom:none; }
 .tmr-dot { width:6px; height:6px; border-radius:2px; flex-shrink:0; margin-top:5px; }
 .tmr-dot.granja      { background:var(--granja-dot); }
@@ -137,15 +137,15 @@ body::before {
 /* WEATHER */
 .weather-header { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
 .weather-icon { font-size:34px; line-height:1; }
-.weather-temp-main { font-family:'DM Serif Display',serif; font-size:32px; color:var(--text); line-height:1; }
-.weather-desc { font-size:14px; color:var(--text-soft); margin-top:2px; }
-.weather-row { display:flex; justify-content:space-between; padding:7px 0; border-top:1px solid var(--border); font-size:14px; color:var(--text-soft); }
+.weather-temp-main { font-family:'DM Serif Display',serif; font-size:36px; color:var(--text); line-height:1; }
+.weather-desc { font-size:16px; color:var(--text-soft); margin-top:2px; }
+.weather-row { display:flex; justify-content:space-between; padding:8px 0; border-top:1px solid var(--border); font-size:16px; color:var(--text-soft); }
 .weather-val { color:var(--text-muted); }
-.weather-advice { font-size:12px; color:var(--text-soft); padding-top:7px; border-top:1px solid var(--border); line-height:1.4; }
+.weather-advice { font-size:15px; color:var(--text-soft); padding-top:7px; border-top:1px solid var(--border); line-height:1.4; }
 .weather-loading { font-size:13px; color:var(--text-muted); font-style:italic; }
 
 /* PRAYER ROWS */
-.prayer-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border); font-size:15px; }
+.prayer-row { display:flex; justify-content:space-between; align-items:center; padding:9px 0; border-bottom:1px solid var(--border); font-size:17px; }
 .prayer-row:last-child { border-bottom:none; }
 .prayer-name { color:var(--text-soft); font-weight:500; }
 .prayer-time { color:var(--text); font-weight:500; }
@@ -158,12 +158,12 @@ body::before {
 
 /* NOTES */
 .notes-card { background:var(--surface); border-radius:14px; border:1px solid var(--border); padding:16px 18px; margin-top:1.25rem; }
-.notes-label { font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; }
-.notes-area { width:100%; min-height:70px; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--text); background:transparent; border:none; outline:none; resize:none; line-height:1.6; }
+.notes-label { font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; }
+.notes-area { width:100%; min-height:70px; font-family:'DM Sans',sans-serif; font-size:17px; color:var(--text); background:transparent; border:none; outline:none; resize:none; line-height:1.6; }
 .notes-area::placeholder { color:var(--text-muted); }
 .save-note-btn { width:100%; margin-top:10px; padding:10px; border-radius:10px; border:1px solid var(--border); background:var(--surface2); color:var(--text-soft); font-family:inherit; font-size:13px; cursor:pointer; transition:all 0.2s; }
 .save-note-btn:hover { border-color:var(--gold); color:var(--gold); }
-.notes-saved { font-size:11px; color:var(--text-muted); margin-top:6px; }
+.notes-saved { font-size:14px; color:var(--text-muted); margin-top:6px; }
 
 /* RECURRING */
 .rec-list { display:flex; flex-direction:column; gap:8px; margin-bottom:1rem; }
@@ -176,18 +176,18 @@ body::before {
 .rec-dot.salat       { background:var(--salat-dot); }
 .rec-dot.dhikr       { background:var(--dhikr-dot); }
 .rec-info { flex:1; }
-.rec-name { font-size:13px; color:var(--text); }
-.rec-meta { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.rec-name { font-size:16px; color:var(--text); }
+.rec-meta { font-size:14px; color:var(--text-muted); margin-top:2px; }
 .rec-del { background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer; }
 
 /* CALENDAR */
 .cal-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; }
 .cal-nav { background:none; border:none; font-size:22px; color:var(--text-soft); cursor:pointer; padding:4px 12px; border-radius:8px; }
 .cal-nav:hover { background:var(--surface); }
-.cal-month-label { font-family:'DM Serif Display',serif; font-size:22px; color:var(--text); }
+.cal-month-label { font-family:'DM Serif Display',serif; font-size:26px; color:var(--text); }
 .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; }
-.cal-dow { text-align:center; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); padding:4px 0 8px; }
-.cal-cell { text-align:center; padding:10px 2px; font-size:13px; border-radius:8px; cursor:pointer; transition:background 0.15s; color:var(--text-soft); }
+.cal-dow { text-align:center; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); padding:4px 0 8px; }
+.cal-cell { text-align:center; padding:11px 2px; font-size:15px; border-radius:8px; cursor:pointer; transition:background 0.15s; color:var(--text-soft); }
 .cal-cell:hover { background:var(--surface); }
 .cal-cell.today { background:var(--accent); color:white; font-weight:500; }
 .cal-cell.other-month { opacity:0.3; }
@@ -196,8 +196,8 @@ body::before {
 .day-ev-title { font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px; }
 .ev-row { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--border); }
 .ev-row:last-child { border-bottom:none; }
-.ev-time { font-size:11px; color:var(--text-muted); min-width:40px; }
-.ev-name { font-size:13px; color:var(--text); flex:1; }
+.ev-time { font-size:14px; color:var(--text-muted); min-width:40px; }
+.ev-name { font-size:16px; color:var(--text); flex:1; }
 .ev-del { background:none; border:none; color:var(--text-muted); font-size:16px; cursor:pointer; }
 
 /* NOTES SECTION */
@@ -208,8 +208,8 @@ body::before {
 .note-items-grid { display:flex; flex-direction:column; gap:10px; }
 .note-item { background:var(--surface); border-radius:14px; border:1px solid var(--border); padding:16px 18px; }
 .note-item-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
-.note-item-date { font-size:11px; color:var(--text-muted); }
-.note-item-text { font-size:13px; color:var(--text); line-height:1.6; white-space:pre-wrap; word-break:break-word; }
+.note-item-date { font-size:14px; color:var(--text-muted); }
+.note-item-text { font-size:16px; color:var(--text); line-height:1.6; white-space:pre-wrap; word-break:break-word; }
 .note-item-del { background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer; padding:0; }
 .note-empty { font-size:13px; color:var(--text-muted); font-style:italic; padding:2rem 0; text-align:center; }
 .note-modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:250; display:none; align-items:flex-end; justify-content:center; }
@@ -230,22 +230,22 @@ body::before {
 @media(min-width:600px){ .modal-backdrop { align-items:center; } }
 .modal { background:var(--surface); border-radius:20px 20px 0 0; padding:1.5rem; width:100%; max-width:480px; border:1px solid var(--border); }
 @media(min-width:600px){ .modal { border-radius:20px; } }
-.modal-title { font-family:'DM Serif Display',serif; font-size:20px; margin-bottom:1rem; color:var(--text); }
+.modal-title { font-family:'DM Serif Display',serif; font-size:24px; margin-bottom:1rem; color:var(--text); }
 .modal-tabs { display:flex; gap:6px; margin-bottom:1.25rem; flex-wrap:wrap; }
-.modal-tab { padding:6px 14px; border-radius:8px; font-size:12px; border:1px solid var(--border); background:var(--surface2); color:var(--text-soft); cursor:pointer; font-family:inherit; transition:all 0.15s; }
+.modal-tab { padding:8px 16px; border-radius:8px; font-size:14px; border:1px solid var(--border); background:var(--surface2); color:var(--text-soft); cursor:pointer; font-family:inherit; transition:all 0.15s; }
 .modal-tab.active { background:var(--accent); color:white; border-color:transparent; font-weight:500; }
 .modal-section { display:none; }
 .modal-section.visible { display:block; }
 .field { margin-bottom:12px; }
-.field label { display:block; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px; }
-.field input, .field select { width:100%; font-family:inherit; font-size:14px; padding:10px 14px; border:1px solid var(--border); border-radius:10px; background:var(--surface2); color:var(--text); outline:none; }
+.field label { display:block; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px; }
+.field input, .field select { width:100%; font-family:inherit; font-size:17px; padding:10px 14px; border:1px solid var(--border); border-radius:10px; background:var(--surface2); color:var(--text); outline:none; }
 .field input:focus, .field select:focus { border-color:var(--gold); }
 .days-row { display:flex; gap:6px; }
 .day-chip { width:36px; height:36px; border-radius:6px; border:1px solid var(--border); background:var(--surface2); font-size:12px; color:var(--text-soft); cursor:pointer; font-family:inherit; display:flex; align-items:center; justify-content:center; transition:all 0.15s; }
 .day-chip.sel { background:var(--accent); color:white; border-color:transparent; font-weight:500; }
 .modal-actions { display:flex; gap:8px; margin-top:1rem; }
-.btn-primary { flex:1; padding:11px; border-radius:10px; border:none; background:var(--accent); color:white; font-family:inherit; font-size:14px; font-weight:500; cursor:pointer; }
-.btn-ghost { padding:11px 16px; border-radius:10px; border:1px solid var(--border); background:none; color:var(--text-soft); font-family:inherit; font-size:14px; cursor:pointer; }
+.btn-primary { flex:1; padding:13px; border-radius:10px; border:none; background:var(--accent); color:white; font-family:inherit; font-size:16px; font-weight:500; cursor:pointer; }
+.btn-ghost { padding:13px 18px; border-radius:10px; border:1px solid var(--border); background:none; color:var(--text-soft); font-family:inherit; font-size:14px; cursor:pointer; }
 
 /* EXPORT */
 .exp-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:300; display:none; align-items:center; justify-content:center; padding:1rem; }
@@ -258,7 +258,7 @@ body::before {
 /* BOTTOM BAR */
 .bottom-bar { position:fixed; bottom:0; left:0; right:0; background:rgba(242,246,240,0.96); backdrop-filter:blur(16px); border-top:1px solid var(--border); padding:0.75rem 1rem; display:flex; justify-content:center; align-items:center; gap:6px; z-index:50; overflow-x:auto; scrollbar-width:none; }
 .bottom-bar::-webkit-scrollbar { display:none; }
-.nav-pill { flex-shrink:0; padding:8px 16px; border-radius:8px; font-size:13px; border:1px solid transparent; background:transparent; color:var(--text-muted); cursor:pointer; font-family:inherit; transition:all 0.2s; white-space:nowrap; }
+.nav-pill { flex-shrink:0; padding:9px 18px; border-radius:8px; font-size:15px; border:1px solid transparent; background:transparent; color:var(--text-muted); cursor:pointer; font-family:inherit; transition:all 0.2s; white-space:nowrap; }
 .nav-pill.active { background:var(--accent); color:white; font-weight:500; }
 .nav-pill:hover:not(.active) { background:var(--surface3); color:var(--text); }
 @media(max-width:480px){ .nav-pill { padding:7px 11px; font-size:12px; } }
@@ -293,11 +293,21 @@ body::before {
     </div>
 
     <div style="height:1px;background:linear-gradient(to right, transparent, rgba(30,122,80,0.2), transparent);margin:1.25rem 0;"></div>
-    <!-- FILA 2: frase del día + notas rápidas -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;align-items:start;">
+
+    <!-- FILA 2: hadiz solo, ancho completo -->
+    <div class="info-card" style="margin-bottom:14px;">
+      <div style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📖 Hadiz del día</div>
+      <div id="hadith-content" style="font-size:18px;color:var(--text-soft);line-height:1.75;"><span style="color:var(--text-muted);font-style:italic;">Cargando...</span></div>
+      <div id="hadith-source" style="font-size:15px;color:var(--text-muted);margin-top:10px;"></div>
+    </div>
+
+    <div style="height:1px;background:linear-gradient(to right, transparent, rgba(30,122,80,0.2), transparent);margin-bottom:1.25rem;"></div>
+
+    <!-- FILA 3: frase del día + notas rápidas -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:0;align-items:start;">
       <div class="info-card">
         <div style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Frase del día</div>
-        <div id="quote-content" style="font-family:'DM Serif Display',serif;font-size:16px;font-style:italic;color:var(--text-soft);line-height:1.6;">Cargando...</div>
+        <div id="quote-content" style="font-family:'DM Serif Display',serif;font-size:18px;font-style:italic;color:var(--text-soft);line-height:1.7;">Cargando...</div>
       </div>
       <div class="info-card" style="padding:14px 16px;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
@@ -717,6 +727,89 @@ function fetchQuote(){
 }
 
 // ─── INIT ─────────────────────────────────────────────────
+async function fetchHadith(){
+  const dayKey='javi_hadith_day';
+  const textKey='javi_hadith_text';
+  const srcKey='javi_hadith_src';
+  const todayStr=toDateStr(now);
+  const cachedDay=localStorage.getItem(dayKey);
+  if(cachedDay===todayStr&&localStorage.getItem(textKey)){
+    document.getElementById('hadith-content').textContent=localStorage.getItem(textKey);
+    document.getElementById('hadith-source').textContent=localStorage.getItem(srcKey)||'';
+    return;
+  }
+
+  // Pool local de 30 hadices auténticos — siempre disponible
+  const hadices=[
+    {t:'Las acciones se juzgan por las intenciones, y cada persona obtendrá lo que pretendió.',s:'Al-Bujari y Muslim'},
+    {t:'Ninguno de vosotros creerá verdaderamente hasta que desee para su hermano lo que desea para sí mismo.',s:'Al-Bujari y Muslim'},
+    {t:'El fuerte no es el que vence a los demás en la lucha, sino el que se controla a sí mismo en la ira.',s:'Al-Bujari'},
+    {t:'Facilita las cosas a las personas y no las compliques. Da buenas noticias y no ahuyentes.',s:'Al-Bujari'},
+    {t:'Lo más amado por Dios son las obras, aunque sean pocas, si se hacen con constancia.',s:'Al-Bujari'},
+    {t:'El creyente que se mezcla con la gente y soporta sus molestias es mejor que el que no lo hace.',s:'Ibn Majah'},
+    {t:'El misericordioso recibe la misericordia del Compasivo. Sed misericordiosos con los de la tierra y el del cielo lo será con vosotros.',s:'Abu Dawud y Tirmidhi'},
+    {t:'Quien de vosotros vea algo malo que lo cambie con su mano; si no puede, con su lengua; si no puede, con su corazón.',s:'Muslim'},
+    {t:'El mejor de vosotros es el que mejor trata a su familia, y yo soy el mejor de vosotros con mi familia.',s:'Tirmidhi'},
+    {t:'No entrareis en el Paraíso hasta que creáis, y no creeréis hasta que os améis mutuamente.',s:'Muslim'},
+    {t:'La sonrisa en la cara de tu hermano es una limosna.',s:'Tirmidhi'},
+    {t:'Di la verdad aunque sea amarga.',s:'Ibn Hibban'},
+    {t:'El musulmán es aquel del que los musulmanes están a salvo, de su lengua y de su mano.',s:'Al-Bujari'},
+    {t:'Ningún padre ha dado a su hijo un regalo mejor que una buena educación.',s:'Tirmidhi'},
+    {t:'Sed en el mundo como un extranjero o como un viajero de paso.',s:'Al-Bujari'},
+    {t:'El mejor de los hombres es el que más beneficio aporta a los demás.',s:'Al-Bujari'},
+    {t:'Paga al trabajador su salario antes de que se seque su sudor.',s:'Ibn Majah'},
+    {t:'Dios ha prescrito la excelencia en todo. Si matáis, hacedlo bien; si sacrificáis, hacedlo bien.',s:'Muslim'},
+    {t:'Cuida de Dios y Él te cuidará. Cuida de Dios y le encontrarás ante ti.',s:'Tirmidhi'},
+    {t:'Haced las cosas con moderación, haced las cosas con moderación, pues sólo quien actúa con moderación llega a la meta.',s:'Al-Bujari'},
+    {t:'El mejor jihad es decir una palabra de verdad ante un gobernante injusto.',s:'Abu Dawud y Tirmidhi'},
+    {t:'No despreciéis ningún bien, aunque sea encontrarte con tu hermano con cara alegre.',s:'Muslim'},
+    {t:'Quien crea en Dios y en el Último Día que diga algo bueno o que calle.',s:'Al-Bujari y Muslim'},
+    {t:'El mundo es la prisión del creyente y el paraíso del incrédulo.',s:'Muslim'},
+    {t:'Buscad la ciencia, aunque sea en China.',s:'Ibn Abdulbarr'},
+    {t:'No hay nada que pese más en la balanza del creyente el Día del Juicio que el buen carácter.',s:'Tirmidhi'},
+    {t:'Quien no da las gracias a las personas, no da las gracias a Dios.',s:'Abu Dawud y Tirmidhi'},
+    {t:'El mejor de vosotros es el que aprende el Corán y lo enseña.',s:'Al-Bujari'},
+    {t:'Dios es gentil y ama la gentileza en todos los asuntos.',s:'Al-Bujari y Muslim'},
+    {t:'Visita a los enfermos, da de comer a los hambrientos y libera a los cautivos.',s:'Al-Bujari'}
+  ];
+
+  // Intentar generar con Claude API
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:200,
+        messages:[{role:'user',content:'Dame UN hadiz auténtico y conocido del Profeta Muhammad ﷺ, en español, que no sea demasiado largo. Formato exacto: primero el texto del hadiz, luego en la siguiente línea la fuente entre paréntesis (colección y número si lo sabes). Sin explicaciones, sin introducción, solo el hadiz y la fuente.'}]
+      })
+    });
+    const data=await res.json();
+    const raw=data.content[0].text.trim();
+    const lines=raw.split('\n').filter(l=>l.trim());
+    const text=lines[0].trim();
+    const src=lines[1]?lines[1].trim():'';
+    if(text.length>10){
+      localStorage.setItem(dayKey,todayStr);
+      localStorage.setItem(textKey,text);
+      localStorage.setItem(srcKey,src);
+      document.getElementById('hadith-content').textContent=text;
+      document.getElementById('hadith-source').textContent=src;
+      return;
+    }
+    throw new Error();
+  }catch(e){
+    // Usar pool local rotando por día
+    const dayOfYear=Math.floor((now-new Date(now.getFullYear(),0,0))/(1000*60*60*24));
+    const h=hadices[dayOfYear%hadices.length];
+    localStorage.setItem(dayKey,todayStr);
+    localStorage.setItem(textKey,h.t);
+    localStorage.setItem(srcKey,'— '+h.s);
+    document.getElementById('hadith-content').textContent=h.t;
+    document.getElementById('hadith-source').textContent='— '+h.s;
+  }
+}
+
 function init(){
   load();injectRecurring();
   const h=now.getHours();
@@ -729,7 +822,7 @@ function init(){
   document.getElementById('ev-date').value=toDateStr(now);
   document.getElementById('notes-area').value='';
   renderToday();renderTomorrow();renderCal();renderRecurring();renderNotesHeader();
-  fetchWeather();fetchPrayerTimes();fetchQuote();updateStreak();
+  fetchWeather();fetchPrayerTimes();fetchQuote();fetchHadith();updateStreak();
   const triggerGreet=h<13?'morning':h>=21?'night':null;
   if(triggerGreet) setTimeout(()=>showToast(getJaviComment(triggerGreet)),2000);
 }
