@@ -521,7 +521,7 @@ function injectRecurring(){
 // ─── FRASES ───────────────────────────────────────────────
 const QUOTES_JAVI=[
   'El hierro no miente. Lo que entra torcido, sale torcido.',
-  'Un legionario no elige las batallas. Elige cómo las pelea.',
+  'Un operador COE no elige las batallas. Elige cómo las pelea.',
   'La tierra da lo que se le pide, si se le pide bien y a tiempo.',
   'Dios está con quienes perseveran (Corán 2:153). Y tú llevas años demostrándolo.',
   'La Pelirroja no es una moto. Es una forma de entender la libertad.',
@@ -529,7 +529,7 @@ const QUOTES_JAVI=[
   'Tras cada dificultad viene la facilidad (Corán 94:5-6). El campo también lo sabe.',
   'Un hombre de campo sabe esperar. Eso vale más que cualquier fuerza.',
   'Lo que se construye con las manos dura más que lo que se firma.',
-  'La legión enseña una sola cosa por encima de todo: seguir. Siempre seguir.',
+  'Las COEs enseñan una sola cosa por encima de todo: seguir. Siempre seguir.',
   'Una CBR 600 roja y un campo que atender. Hay quien paga por vivir así.',
   'El acero se forja en frío, se trabaja en caliente. Los hombres, al revés.',
   'La Pelirroja ya tiene kilómetros encima. Igual que tú. Y los dos seguís.',
@@ -546,7 +546,7 @@ const NOTES_QUOTES_JAVI=[
 const JAVI_COMMENTS={
   task_done:[
     'Tachado. Siguiente.',
-    'Hecho. Como en la legión, sin excusas.',
+    'Hecho. Como en las COEs: sin excusas.',
     'Completado. La Pelirroja no espera a los lentos.',
     'Uno menos. El campo no da medallas pero tú sí te las ganas.',
     'Listo. Sin dramas, sin historias.',
@@ -554,7 +554,7 @@ const JAVI_COMMENTS={
     'Completado. Los animales no lo saben, pero lo agradecen.',
     'Tachado. A por el siguiente antes de que enfríe el café.',
     'Bien hecho. Y encima sin quejarte. Eso sí es templanza.',
-    'Hecho. La legión diría: misión cumplida. Tú dices: siguiente.'
+    'Hecho. Las COEs dirían: misión cumplida. Tú dices: siguiente.'
   ],
   morning:[
     'Buenos días. Los animales llevan media hora mirando el comedero.',
@@ -563,13 +563,13 @@ const JAVI_COMMENTS={
     'Buenos días. El hierro se forja en caliente. Igual que el día.',
     'Otro amanecer en el campo. Pocos tienen esa suerte y pocos se la merecen como tú.',
     'Buenos días. Dios da el día, tú pones lo demás.',
-    'Buenos días, legionario. Misión del día: pendiente de definir.'
+    'Buenos días, operador COE. Misión del día: pendiente de definir.'
   ],
   overload:[
-    'Eso es mucho para un día. El legionario que sobrecarga la mochila llega el último.',
+    'Eso es mucho para un día. El operador COE que sobrecarga la mochila llega el último.',
     'Demasiado. Hasta La Pelirroja necesita parar a repostar.',
     'Filtra. No todo es urgente aunque todo lo parezca.',
-    'Uno a uno. Siempre. Hasta en la legión se avanza así.',
+    'Uno a uno. Siempre. Hasta en las COEs se avanza de uno en uno.',
     'Con esa lista, hasta el hierro se doblaría. Prioriza, Javi.'
   ],
   free_tomorrow:[
@@ -586,13 +586,13 @@ const JAVI_COMMENTS={
     'La Pelirroja ya está en el garaje. Tú al catre.'
   ],
   rescue:[
-    'Aplazado. En la legión se llama retirada táctica. No es rendirse.',
+    'Aplazado. En las COEs se llama retirada táctica. No es rendirse.',
     'Todo para mañana. El campo entiende los días duros mejor que nadie.',
     'Retirada táctica. Mañana se avanza con más fuerza.',
     'A veces hay que dejar enfriar el hierro para seguir forjando.'
   ],
   all_done:[
-    'Lista limpia. Misión cumplida. Eso es todo, legionario.',
+    'Lista limpia. Misión cumplida. Eso es todo, operador COE.',
     'Todo hecho. La granja puede respirar. Tú también.',
     'Completado. Si forjar fuera así de rápido, serías rico.',
     'Todo tachado. La Pelirroja estaría orgullosa si pudiera estarlo.',
@@ -628,9 +628,9 @@ function showToast(msg,duration=14000){
 
 // ─── STREAK ──────────────────────────────────────────────
 const STREAK_MSGS={
-  low:['Día {n}. De vuelta. Peor es no volver.','Racha de {n}. Empezar de cero es de los que siguen. Bien.','Llevas {n} día. La legión empezó igual, un día.'],
+  low:['Día {n}. De vuelta. Peor es no volver.','Racha de {n}. Empezar de cero es de los que siguen. Bien.','Llevas {n} día. Las COEs empezaron igual, un día.'],
   mid:['{n} días seguidos. Eso ya huele a costumbre.','Casi una semana. La Pelirroja lleva más kilómetros con menos ruido.','{n} días. El campo no lo sabe, pero los animales sí lo notan.'],
-  high:['{n} días. Eso ya no es suerte. Eso es carácter.','¡{n} días, Javi! Si el acero aguantara tanto, viviría para siempre.','{n} días seguidos. En la legión eso ya es mérito de mención.'],
+  high:['{n} días. Eso ya no es suerte. Eso es carácter.','¡{n} días, Javi! Si el acero aguantara tanto, viviría para siempre.','{n} días seguidos. En las COEs eso ya es mérito de mención.'],
   epic:['{n} días. Ya es parte de ti aunque no lo parezca.','{n} días. La Pelirroja no lleva tantos sin parar. Impresionante.','Más de un mes. Dios está con quienes perseveran. Y tú llevas {n} días demostrándolo.']
 };
 function showStreakToast(n){
@@ -720,7 +720,7 @@ function fetchQuote(){
 function init(){
   load();injectRecurring();
   const h=now.getHours();
-  const NOMBRES=['Guerrero musulmán','el herrero','el legionario','el granjero','el motero','jefe de la manada'];
+  const NOMBRES=['Guerrero musulmán','el herrero','el COE','el granjero','el motero','jefe de la manada'];
   const dayOfYear=Math.floor((now-new Date(now.getFullYear(),0,0))/(1000*60*60*24));
   const nombre=NOMBRES[dayOfYear%NOMBRES.length];
   const g=h<13?`Buenos días, <em>${nombre}</em>`:h<20?`Buenas tardes, <em>${nombre}</em>`:`Buenas noches, <em>${nombre}</em>`;
