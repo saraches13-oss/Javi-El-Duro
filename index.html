@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#0F0F0F">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Mi día · Javi">
-<title>Mi día · Javi</title>
+<meta name="apple-mobile-web-app-title" content="Mi día · Guerrero musulmán">
+<title>Mi día · Guerrero musulmán</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -718,7 +718,7 @@ function fetchQuote(){
 function init(){
   load();injectRecurring();
   const h=now.getHours();
-  const NOMBRES=['Javi','el herrero','el legionario','el granjero','el motero','jefe de la manada'];
+  const NOMBRES=['Guerrero musulmán','el herrero','el legionario','el granjero','el motero','jefe de la manada'];
   const dayOfYear=Math.floor((now-new Date(now.getFullYear(),0,0))/(1000*60*60*24));
   const nombre=NOMBRES[dayOfYear%NOMBRES.length];
   const g=h<13?`Buenos días, <em>${nombre}</em>`:h<20?`Buenas tardes, <em>${nombre}</em>`:`Buenas noches, <em>${nombre}</em>`;
